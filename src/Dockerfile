@@ -1,9 +1,6 @@
-FROM node:18.13.0
-
+FROM node:18.11.0
 WORKDIR /app
-COPY package.json ./
-RUN yarn install
-
+COPY package*.json ./
+RUN npm install
 COPY . . 
-EXPOSE 8080
-CMD ['node', 'server.js']
+CMD ["node", "server.js"]
